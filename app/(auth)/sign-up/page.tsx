@@ -1,12 +1,7 @@
 import AuthForm from "@/components/AuthForm";
-import ClientOnly from "@/components/ClientOnly";
 
 const Page = () => {
-  return (
-    <ClientOnly>
-      <AuthForm type="sign-up" />
-    </ClientOnly>
-  );
+  return <AuthForm type="sign-up" />;
 };
 
 export default Page;
