@@ -1,4 +1,3 @@
-##################SHIVAKUMAR##################
 <div align="center">
   <br />
     <a href="https://www.youtube.com/watch?v=8GK8R77Bd7g" target="_blank">
@@ -690,8 +689,8 @@ export const dummyInterviews: Interview[] = [
 
 </details>
 
-
-## <a  href='https://ai-mock-interview-prep-six.vercel.app/' name="links">HOSTED WEB HERE CHECK OUT</a>
+## 🚀 Live Demo
+## <a  href='https://ai-mock-interview-prep-six.vercel.app/' name="links">Click here to view the live app</a>
 
 Public assets used in the project can be found [here](https://drive.google.com/drive/folders/1DuQ9bHH3D3ZAN_CFKfBgsaB8DEhEdnog?usp=sharing)
 
