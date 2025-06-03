@@ -691,6 +691,9 @@ export const dummyInterviews: Interview[] = [
 </details>
 
 
+## <a  href='https://ai-mock-interview-prep-six.vercel.app/' name="links">HOSTED WEB HERE CHECK OUT</a>
 
+Public assets used in the project can be found [here](https://drive.google.com/drive/folders/1DuQ9bHH3D3ZAN_CFKfBgsaB8DEhEdnog?usp=sharing)
 
+## <a name="more">🚀 More</a>
 
