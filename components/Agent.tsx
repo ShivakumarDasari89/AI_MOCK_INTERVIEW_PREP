@@ -42,6 +42,8 @@ const Agent = ({
 
     const onCallEnd = () => {
       setCallStatus(CallStatus.FINISHED);
+        <p className="text-center text-red-500 mt-4">The interview has ended.</p>
+
     };
 
     const onMessage = (message: Message) => {
@@ -53,11 +55,13 @@ const Agent = ({
 
     const onSpeechStart = () => {
       console.log("speech start");
+      console.log("Messgae",messages)
       setIsSpeaking(true);
     };
 
     const onSpeechEnd = () => {
       console.log("speech end");
+      console.log("Messgae",messages)
       setIsSpeaking(false);
     };
 
@@ -90,6 +94,7 @@ const Agent = ({
     const handleGenerateFeedback = async (messages: SavedMessage[]) => {
       console.log("handleGenerateFeedback");
 
+
       const { success, feedbackId: id } = await createFeedback({
         interviewId: interviewId!,
         userId: userId!,
@@ -108,7 +113,8 @@ const Agent = ({
     if (callStatus === CallStatus.FINISHED) {
       if (type === "generate") {
         router.push("/");
-      } else {
+      }
+       else {
         handleGenerateFeedback(messages);
       }
     }
@@ -118,12 +124,17 @@ const Agent = ({
     setCallStatus(CallStatus.CONNECTING);
 
     if (type === "generate") {
-      await vapi.start(process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID!, {
-        variableValues: {
-          username: userName,
-          userid: userId,
-        },
-      });
+      try {
+  await vapi.start(process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID!, {
+    variableValues: {
+      username: userName,
+      userid: userId,
+    },
+  });
+} catch (err) {
+  console.error("Failed to start call:", err);
+  setCallStatus(CallStatus.FINISHED);
+}
 
     } else {
 
